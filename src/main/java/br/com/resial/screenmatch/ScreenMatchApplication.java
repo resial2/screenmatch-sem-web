@@ -1,8 +1,6 @@
 package br.com.resial.screenmatch;
 
-import br.com.resial.screenmatch.model.DadosSerie;
-import br.com.resial.screenmatch.service.ConsumoApi;
-import br.com.resial.screenmatch.service.ConverteDados;
+import br.com.resial.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,12 +14,12 @@ public class ScreenMatchApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		var novaSerie = new ConsumoApi();
-		var json = novaSerie.obterDados("https://omdbapi.com/?t=supernatural&apikey=6585022c");
-		System.out.println(json);
 
-		ConverteDados conversor = new ConverteDados();
-		DadosSerie dados = conversor.obterDados(json, DadosSerie.class);
-		System.out.println(dados);
+		Principal principal = new Principal();
+		principal.exibeMenu();
+
+//		var jsonEpisodio = consumoApi.obterDados("https://omdbapi.com/?t=supernatural&season=1&episode=1&apikey=6585022c");
+//		DadosEpisodio episodio = conversor.obterDados(jsonEpisodio, DadosEpisodio.class);
+//		System.out.println(episodio);
 	}
 }
