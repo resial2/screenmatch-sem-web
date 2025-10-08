@@ -1,5 +1,6 @@
 package br.com.resial.screenmatch;
 
+import br.com.resial.screenmatch.principal.Exercicios;
 import br.com.resial.screenmatch.principal.Principal;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +18,8 @@ public class ScreenMatchApplication implements CommandLineRunner {
 
 		Principal principal = new Principal();
 		principal.exibeMenu();
+
+//		new Exercicios().executaExercicios();
 
 //		var jsonEpisodio = consumoApi.obterDados("https://omdbapi.com/?t=supernatural&season=1&episode=1&apikey=6585022c");
 //		DadosEpisodio episodio = conversor.obterDados(jsonEpisodio, DadosEpisodio.class);
